@@ -1,0 +1,143 @@
+:root {
+    --Bright-orange: hsl(31, 77%, 52%);
+    --Dark-cyan: hsl(184, 100%, 22%);
+    --Very-dark-cyan: hsl(179, 100%, 13%);
+    --light-gray: hsla(0, 0%, 100%, 0.75);
+    --white: hsl(0, 0%, 95%); 
+}
+
+body {
+    margin: 0;
+    padding: 0 10% ;
+}
+
+main {
+    justify-content: center;
+    padding: 10% 0;
+}
+
+article {
+    padding: 10%;
+}
+
+article h1 {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 700;
+    color: var(--white);
+    font-size: 2rem;
+}
+p,  button {
+
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+}
+article p {
+    color: var(--light-gray);
+    padding-right: 10%;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+article button {
+
+    border: none;
+    padding: 4% 10%;
+    margin: 10% 0;
+    border-radius: 50px;
+}
+
+article button:hover {
+    color: var(--white);
+    background-color: transparent;
+    border: 2px solid var(--white);
+}
+
+.bright-orange {
+    color: var(--Bright-orange);
+}
+
+.dark-cyan {
+    color: var(--Dark-cyan);
+}
+
+.very-dark-cyan {
+    color: var(--Very-dark-cyan);
+}
+
+
+article:nth-child(1){
+    background-color: var(--Bright-orange);
+    grid-area: sedans;
+    border-radius: 7px 7px 0 0;
+}
+
+article:nth-child(2) {
+    background-color: var(--Dark-cyan);
+    grid-area: suv;
+}
+
+article:nth-child(3){
+    background-color: var(--Very-dark-cyan);
+    grid-area: luxury;
+    border-radius: 0 0 7px 7px;
+}
+
+
+
+@media only screen and (min-width: 1025px) {
+   
+    main {
+        display: grid;
+        grid-template-columns: repeat(3, 300px);
+        grid-template-areas:
+        'sedans suv luxury';  
+         
+    }
+    article:nth-child(1){
+        border-radius: 7px 0 0 7px;
+    }
+    
+
+    
+    article:nth-child(3){
+        border-radius: 0 7px 7px 0;
+    }
+    
+
+}
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 1024px  ) {
+    body {
+        padding:  0 5%;
+    }
+ 
+    main {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(100px, 500px));
+        grid-template-areas:
+        'sedans suv'
+        'luxury luxury';
+    }
+    article:nth-child(1){
+        border-radius: 7px 0 0 0;
+    }
+    
+    article:nth-child(2){
+        border-radius: 0 7px 0 0;
+    }
+    
+    article:nth-child(3){
+        border-radius: 0 0 7px 7px;
+    }
+
+    article p {
+        font-size: 0.8rem;
+    }
+
+    article button {
+        font-size: 16px;
+    }
+}
+
